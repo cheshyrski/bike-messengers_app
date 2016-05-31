@@ -1,0 +1,123 @@
+<main class="create-page">
+    <form name="createForm" role="form" ng-submit="addOrder(newOrder)">
+        <h2>Форма замовлення</h2>
+        <p class="lead">Заповніть нижченаведені поля форми, вказавши деталі замовлення. Поля, що позначені зірочкою *, є обов'язковими. Після відправлення форми протягом 20 хвилин з вами зв'яжеться диспетчер</p>
+        <fieldset>
+            <legend>Інформація про замовника</legend>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label for="name">Ім'я *</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="name" data-ng-model="newOrder.firstname" placeholder="Введіть ім'я" data-ng-required="true">
+                        <span class="input-group-addon glyphicon glyphicon-user"></span>
+                    </div>
+                </div>
+                <div class="form-group  col-lg-6">
+                    <label for="surname">Прізвище *</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="surname" data-ng-model="newOrder.lastname" placeholder="Введіть прізвище" data-ng-required="true">
+                        <span class="input-group-addon glyphicon glyphicon-user"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label for="email">Email *</label>
+                    <div class="input-group">
+                        <input type="email" class="form-control" id="email" data-ng-model="newOrder.email" placeholder="Введіть адресу email" data-ng-required="true">
+                        <span class="input-group-addon glyphicon glyphicon-envelope"></span>
+                    </div>
+                </div>
+                <div class="form-group  col-lg-6">
+                    <label for="phone">Телефон у форматі 0ХХ-ХХХ-ХХ-ХХ *</label>
+                    <div class="input-group">
+                        <input type="tel" class="form-control" pattern="0[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" id="phone" data-ng-model="newOrder.phone" placeholder="Введіть номер телефону" data-ng-required="true">
+                        <span class="input-group-addon glyphicon glyphicon-earphone"></span>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Деталі замовлення</legend>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="dt">Дата виконання *</label>
+                    <p class="input-group">
+                        <input type="text" id="dt" data-ng-model="newOrder.dt" class="form-control" uib-datepicker-popup="{{format}}" is-open="popup.opened" datepicker-options="dateOptions" data-ng-required="true" close-text="Close" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" data-ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+                </div>
+                <div class="form-group  col-lg-6">
+                    <label for="type">Категорія доставки *</label>
+                    <br>
+                    <select id="type" data-ng-model="newOrder.type" data-ng-required="true">
+                        <option data-ng-selected="true" value="" disabled>Оберіть категорію</option>
+                        <option value="rush">Термінова</option>
+                        <option value="standard">Стандарт</option>
+                        <option value="economy">Економ</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="adress_pickup">Адреса місця забору вантажу *</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="adress_pickup" data-ng-model="newOrder.adress_pickup" placeholder="вул. Наукова, 3А" data-ng-required="true">
+                    <span class="input-group-addon glyphicon glyphicon-map-marker"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="adress_delivery">Адреса місця видачі вантажу *</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="adress_delivery" data-ng-model="newOrder.adress_delivery" placeholder="вул. Козельницька, 2А" data-ng-required="true">
+                    <span class="input-group-addon glyphicon glyphicon-map-marker"></span>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Інформація про вантаж</legend>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label for="weight">Вага вантажу *, кг</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="weight" data-ng-model="newOrder.weight" min="1" max="50" placeholder="Вкажіть вагу - ціле число від 1 до 50" data-ng-required="true">
+                        <span class="input-group-addon glyphicon glyphicon-lock"></span>
+                    </div>
+                </div>
+                <div class="form-group col-lg-6">
+                    <label for="dimensions">Габарити вантажу *, см</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="dimensions" data-ng-model="newOrder.dimensions" placeholder="Д х Ш х В" data-ng-required="true">
+                        <span class="input-group-addon glyphicon glyphicon-resize-horizontal"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description">Опис вантажу</label>
+                <br>
+                <textarea rows="4" id="description" data-ng-model="newOrder.description">Опишіть ваш вантаж</textarea>
+            </div>
+            <div class="form-group">
+                <label for="add_info">Додаткова інформація</label>
+                <br>
+                <textarea rows="4" id="add_info" data-ng-model="newOrder.add_info">При необхідності вкажіть додаткову інформацію, застереження, побажання</textarea>
+            </div>
+        </fieldset>
+        <a class="btn btn-danger btn-lg" href="#/">Відмінити</a>
+        <button type="submit" class="btn btn-primary btn-lg pull-right">Замовити</button>
+    </form>
+</main>
+<!-- Modal window: Order created - UI-bootstrap-->
+<script type="text/ng-template" id="orderCreatedModal.tpl.html">
+    <div class="modal-header text-center">
+        <h2 class="modal-title">Ваше замовлення створене</h2>
+    </div>
+    <div class="modal-body text-center">
+        <img src="images/emoticons/monster_love.png" width="100px">
+        <h4>Протягом 20 хвилин з вами зв'яжеться диспетчер</h4>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">Закрити</button>
+    </div>
+</script>

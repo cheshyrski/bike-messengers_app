@@ -1,0 +1,311 @@
+@import 'utils/variables';
+@import 'components/components';
+@font-face {
+    font-family: "Glyphicons Halflings";
+    src: url("../bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf");
+    font-family: 'Philosopher';
+    src: url("../fonts/philosopher/Philosopher-Regular.ttf");
+    font-family: 'Roboto', sans-serif;
+    src: urlurl("../fonts/roboto/Roboto-Regular.ttf");
+}
+
+body {
+    font-family: 'Philosopher', sans-serif;
+}
+
+
+/*===== HEADER=====*/
+
+header {
+    .navbar-brand-logo {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    #toggle-button {
+        margin: 7px;
+        background-color: #f0ad4e;
+    }
+    .navbar-collapse {
+        .navbar-right.btn-warning {
+            margin: 7px;
+        }
+    }
+}
+
+
+/*===== /HEADER=====*/
+
+
+/*===== MAIN PAGE=====*/
+
+.main-page {
+    .main-image {
+        padding-top: 60px;
+        position: relative;
+        &-pic {
+            width: 100%;
+        }
+        &-logo {
+            position: absolute;
+            width: 20%;
+            right: 15%;
+            top: 25%;
+        }
+        &-h3 {
+            position: absolute;
+            right: 15%;
+            bottom: 20%;
+            font-size: 40px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+    }
+    .row {
+        padding: 50px;
+        .row-img {
+            width: 200px;
+        }
+    }
+    .features {
+        padding: 120px 50px 50px;
+        /* Vertically center images part 1: add padding above and below text. */
+        overflow: hidden;
+        /* Vertically center images part 2: clear their floats. */
+        &-divider {
+            margin: 50px 0;
+            /* Space out the Bootstrap <hr> more */
+        }
+        &-image-box {
+            margin-top: -70px;
+            /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+            width: 35%;
+        }
+        &-inner-txtblock {
+            width: 55%;
+            display: inline-block;
+        }
+    }
+}
+
+
+/*===== /MAIN PAGE=====*/
+
+
+/*===== FOOTER=====*/
+
+footer {
+    padding: 40px;
+    .footer-logo {
+        width: 120px;
+    }
+    .footer-icons {
+        margin-top: 15px;
+        &-icon {
+            width: 40px;
+        }
+    }
+    .footer-titles {
+        .list-group {
+            &-item {
+                border: none;
+            }
+        }
+    }
+    .footer-contacts {
+        .list-group {
+            &-item {
+                border: none;
+                .footer-icons-contact {
+                    width: 1em;
+                }
+            }
+        }
+    }
+}
+
+
+/*===== /FOOTER=====*/
+
+
+/*===== CONDITIONS PAGE=====*/
+
+.navigation {
+    position: relative;
+    margin-top: 60px;
+    #map_canvas {
+        width: 100%;
+        height: 500px;
+    }
+    &-buttons {
+        position: absolute;
+        bottom: 20px;
+        left: 150px;
+    }
+}
+
+.conditions-block {
+    &-txt {
+        padding: 20px 10%;
+        /*background-image: url(../app/conditions-page/images/condition-page-pic1.jpg);
+        opacity: 0.6;
+        color: #ffffff;
+        background-size: 100%;*/
+        h2 {
+            text-align: center;
+        }
+    }
+    &-speed,
+    &-weight {
+        position: relative;
+        padding: 20px 10%;
+        img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 10%;
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 240px;
+        }
+        table {
+            width: 60%;
+        }
+    }
+    &-surcharges {
+        padding: 20px 10%;
+        margin: 0;
+        .media {
+            &-left {
+                img {
+                    width: 240px;
+                }
+            }
+            &-body {}
+        }
+    }
+    &-payment {
+        padding: 20px 10%;
+        .media {
+            &-right {
+                img {
+                    width: 240px;
+                }
+            }
+        }
+    }
+}
+
+
+/*===== /CONDITIONS PAGE=====*/
+
+
+/*===== CREATE PAGE=====*/
+
+.create-page {
+    font-family: 'Roboto', sans-serif;
+    padding: 40px 20%;
+    form {
+        margin-top: 60px;
+        fieldset {
+            .row {
+                padding: 0;
+            }
+            .form-group {
+                textarea {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+/*===== /ORDER PAGE=====*/
+
+
+/*===== ADMIN PAGE=====*/
+
+.access-denied {
+    font-family: 'Roboto', sans-serif;
+    padding: 250px 100px;
+    background-image: url(../images/logos/messengers-logo_white.png);
+    background-repeat: no-repeat;
+    background-position: 80% 70%;
+    background-size: 400px;
+    height: 600px;
+    .panel {
+        width: 600px;
+    }
+}
+
+.main-admin {
+    font-family: 'Roboto', sans-serif;
+    margin: 80px 30px 0;
+}
+/*===== /ADMIN PAGE=====*/
+
+
+/*===== LOGIN PAGE=====*/
+.header-login {
+    .header-logo {
+        width: 120px;
+        margin: 10px;
+    }
+}
+.login-page {
+    font-family: 'Roboto', sans-serif;
+    .form-signin{
+        width: 350px;
+        margin: 0 auto;
+        .form-control {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+/*===== /LOGIN PAGE=====*/
+
+@media (max-width: 767px) {
+    .navbar-right,
+    .features-image-box {
+        display: none;
+    }
+    .navbar-header {
+        margin-right: 5px !important;
+    }
+    .features-heading {
+        font-size: 30px;
+    }
+    .features-inner-txtblock {
+        width: 100% !important;
+    }
+    .conditions-block {
+        &-speed,
+        &-weight {
+            img {
+                display: none;
+            }
+            table {
+                width: 90%;
+            }
+        }
+        &-surcharges,
+        &-payment {
+            img {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .main-image-h3 {
+        font-size: 30px !important;
+    }
+    .features {
+        padding-top: 50px !important;
+        &-image-box {
+            margin-top: -20px !important;
+        }
+    }
+}

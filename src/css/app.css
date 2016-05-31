@@ -1,0 +1,209 @@
+.main-background {
+  background-color: #f0f1f1; }
+
+.features-heading {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px; }
+
+.pull-left {
+  margin-right: 40px; }
+
+.pull-right {
+  margin-left: 40px; }
+
+@font-face {
+  font-family: "Glyphicons Halflings";
+  src: url("../bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf");
+  font-family: 'Philosopher';
+  src: url("../fonts/philosopher/Philosopher-Regular.ttf");
+  font-family: 'Roboto', sans-serif;
+  src: urlurl("../fonts/roboto/Roboto-Regular.ttf"); }
+body {
+  font-family: 'Philosopher', sans-serif; }
+
+/*===== HEADER=====*/
+header .navbar-brand-logo {
+  max-width: 100%;
+  max-height: 100%; }
+header #toggle-button {
+  margin: 7px;
+  background-color: #f0ad4e; }
+header .navbar-collapse .navbar-right.btn-warning {
+  margin: 7px; }
+
+/*===== /HEADER=====*/
+/*===== MAIN PAGE=====*/
+.main-page .main-image {
+  padding-top: 60px;
+  position: relative; }
+  .main-page .main-image-pic {
+    width: 100%; }
+  .main-page .main-image-logo {
+    position: absolute;
+    width: 20%;
+    right: 15%;
+    top: 25%; }
+  .main-page .main-image-h3 {
+    position: absolute;
+    right: 15%;
+    bottom: 20%;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #fff; }
+.main-page .row {
+  padding: 50px; }
+  .main-page .row .row-img {
+    width: 200px; }
+.main-page .features {
+  padding: 120px 50px 50px;
+  /* Vertically center images part 1: add padding above and below text. */
+  overflow: hidden;
+  /* Vertically center images part 2: clear their floats. */ }
+  .main-page .features-divider {
+    margin: 50px 0;
+    /* Space out the Bootstrap <hr> more */ }
+  .main-page .features-image-box {
+    margin-top: -70px;
+    /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    width: 35%; }
+  .main-page .features-inner-txtblock {
+    width: 55%;
+    display: inline-block; }
+
+/*===== /MAIN PAGE=====*/
+/*===== FOOTER=====*/
+footer {
+  padding: 40px; }
+  footer .footer-logo {
+    width: 120px; }
+  footer .footer-icons {
+    margin-top: 15px; }
+    footer .footer-icons-icon {
+      width: 40px; }
+  footer .footer-titles .list-group-item {
+    border: none; }
+  footer .footer-contacts .list-group-item {
+    border: none; }
+    footer .footer-contacts .list-group-item .footer-icons-contact {
+      width: 1em; }
+
+/*===== /FOOTER=====*/
+/*===== CONDITIONS PAGE=====*/
+.navigation {
+  position: relative;
+  margin-top: 60px; }
+  .navigation #map_canvas {
+    width: 100%;
+    height: 500px; }
+  .navigation-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 150px; }
+
+.conditions-block-txt {
+  padding: 20px 10%;
+  /*background-image: url(../app/conditions-page/images/condition-page-pic1.jpg);
+  opacity: 0.6;
+  color: #ffffff;
+  background-size: 100%;*/ }
+  .conditions-block-txt h2 {
+    text-align: center; }
+.conditions-block-speed, .conditions-block-weight {
+  position: relative;
+  padding: 20px 10%; }
+  .conditions-block-speed img, .conditions-block-weight img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10%;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 240px; }
+  .conditions-block-speed table, .conditions-block-weight table {
+    width: 60%; }
+.conditions-block-surcharges {
+  padding: 20px 10%;
+  margin: 0; }
+  .conditions-block-surcharges .media-left img {
+    width: 240px; }
+.conditions-block-payment {
+  padding: 20px 10%; }
+  .conditions-block-payment .media-right img {
+    width: 240px; }
+
+/*===== /CONDITIONS PAGE=====*/
+/*===== CREATE PAGE=====*/
+.create-page {
+  font-family: 'Roboto', sans-serif;
+  padding: 40px 20%; }
+  .create-page form {
+    margin-top: 60px; }
+    .create-page form fieldset .row {
+      padding: 0; }
+    .create-page form fieldset .form-group textarea {
+      width: 100%; }
+
+/*===== /ORDER PAGE=====*/
+/*===== ADMIN PAGE=====*/
+.access-denied {
+  font-family: 'Roboto', sans-serif;
+  padding: 250px 100px;
+  background-image: url(../images/logos/messengers-logo_white.png);
+  background-repeat: no-repeat;
+  background-position: 80% 70%;
+  background-size: 400px;
+  height: 600px; }
+  .access-denied .panel {
+    width: 600px; }
+
+.main-admin {
+  font-family: 'Roboto', sans-serif;
+  margin: 80px 30px 0; }
+
+/*===== /ADMIN PAGE=====*/
+/*===== LOGIN PAGE=====*/
+.header-login .header-logo {
+  width: 120px;
+  margin: 10px; }
+
+.login-page {
+  font-family: 'Roboto', sans-serif; }
+  .login-page .form-signin {
+    width: 350px;
+    margin: 0 auto; }
+    .login-page .form-signin .form-control {
+      margin-bottom: 10px; }
+
+/*===== /LOGIN PAGE=====*/
+@media (max-width: 767px) {
+  .navbar-right,
+  .features-image-box {
+    display: none; }
+
+  .navbar-header {
+    margin-right: 5px !important; }
+
+  .features-heading {
+    font-size: 30px; }
+
+  .features-inner-txtblock {
+    width: 100% !important; }
+
+  .conditions-block-speed img, .conditions-block-weight img {
+    display: none; }
+  .conditions-block-speed table, .conditions-block-weight table {
+    width: 90%; }
+  .conditions-block-surcharges img, .conditions-block-payment img {
+    display: none; } }
+@media (max-width: 992px) {
+  .main-image-h3 {
+    font-size: 30px !important; }
+
+  .features {
+    padding-top: 50px !important; }
+    .features-image-box {
+      margin-top: -20px !important; } }
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,76 @@
+
+<!-- Unregistered user view-->
+<div class="access-denied main-background" data-ng-if="currentUser === null">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>Недостатньо прав для перегляду<img src="images/privat_keys.png" width="60px"></h2></div>
+        <div class="panel-body">
+            <b>Для переходу на сторінку авторизуйтесь як Адміністратор </b>
+            <a class="btn btn-primary btn-lg" href="#/login">Log in</a>
+        </div>
+    </div>
+</div>
+<!-- Admin view-->
+<main class="main-admin" data-ng-if="currentUser !== null">
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+            <div class="input-group input-group-lg col-lg-4">
+                <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
+                <input type="text" class="form-control" ng-model="inputText" placeholder="Пошук за прізвищем" aria-describedby="sizing-addon1">
+            </div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover lead ">
+                <tr>
+                    <th>ID</th>
+                    <th>Дата</th>
+                    <th>Замовник</th>
+                    <th>Категорія</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center">Edit</th>
+                    <th class="text-center">Delete</th>
+                </tr>
+                <tr ng-repeat="order in orders | orderBy:'-id' | filter: {lastname: inputText}">
+                    <td>{{order.id}}</td>
+                    <td>{{order.dt | date: 'dd.MM.yyyy'}}</td>
+                    <td>{{order.lastname}} {{order.firstname}}</td>
+                    <td>{{order.type}}</td>
+                    <td class="text-center"><span class="label label-{{ order.resolved == true ? 'success' : 'danger' }}"><span class="glyphicon glyphicon-{{ order.resolved == true ? 'ok' : 'hourglass' }}" aria-hidden="true"></span></span>
+                    </td>
+                    <td class="text-center"><a href="#/admin/{{ order.id }}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td class="text-center">
+                        <button class="btn btn-danger" ng-click="confirmDelete(order)"><span class="glyphicon glyphicon-remove"></span></button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</main>
+<!-- Modal window: Confirm delete - UI-bootstrap-->
+<script type="text/ng-template" id="confirmDeleteModal.tpl.html">
+    <div class="modal-header">
+        <h2 class="modal-title text-center">Видалити замовлення?</h2>
+    </div>
+    <div class="modal-body text-center">
+        <img src="images/emoticons/monster_wtf.png" width="100px">
+        <h4>Подумайте ще раз. Не всі замовники приємні люди. Але кожен інвестує у ваше майбутнє</h4>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-danger" type="button" ng-click="ok()">Відмінити</button>
+        <button class="btn btn-primary" type="button" ng-click="deleteOrder(order)">Не переконав</button>
+    </div>
+</script>
+<!-- Modal window: Order deleted - UI-bootstrap-->
+<script type="text/ng-template" id="orderDeletedModal.tpl.html">
+    <div class="modal-header text-center">
+        <h2 class="modal-title">Замовлення видалене</h2>
+    </div>
+    <div class="modal-body text-center">
+        <img src="images/emoticons/monster_delete.png" width="100px">
+        <h4>Це був жахливий клієнт. Більше нічого не нагадуватиме про нього</h4>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">Закрити</button>
+    </div>
+</script>
