@@ -4,8 +4,9 @@
     angular.module('messengers-app')
         .controller('EditOrderPageController', EditOrderPageController);
 
-    function EditOrderPageController($scope, $http, $location, $routeParams, $uibModal, Backand, OrdersService) {
+    function EditOrderPageController($scope, $http, $location, $routeParams, $uibModal, Backand, OrdersService, CommonService) {
         $scope.order = {};
+        $scope.currentUser = CommonService.getUserDetails;
 
         $scope.getOrder = function(id) {
             OrdersService.getOne(id)

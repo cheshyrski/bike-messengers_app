@@ -8,10 +8,6 @@
         var baseUrl = '/1/objects/';
         var objectName = 'orders';
 
-        function getUrlForId(id) {
-            return getUrl() + id;
-        }
-
         function getOrders() {
             return $http({
                 method: 'GET',

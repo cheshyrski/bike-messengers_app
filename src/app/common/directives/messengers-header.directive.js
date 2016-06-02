@@ -8,7 +8,7 @@
         return {
             restrict: 'A',
             templateUrl: 'app/common/templates/messengers-header.tpl.html',
-            controller: MainPageController
+            controller: HeaderController
         };
     }
 }());

@@ -4,8 +4,10 @@
     angular.module('messengers-app')
         .controller('HeaderController', HeaderController);
 
-    function HeaderController($rootScope, $scope, $http, $location, Backand) {
-       
+    function HeaderController($scope, $http, $location, CommonService, Backand) {
+        
+        $scope.currentUser = CommonService.getUserDetails;
+
          $scope.isActive = function (viewLocation) {
             return viewLocation === $location.path();
         };
@@ -18,7 +20,7 @@
         $scope.signout = function() {
             return Backand.signout()
                 .then(function(response) {
-                    $rootScope.currentUser = null;
+                    //CommonService.currentUser = CommonService.getUserDetails();
                     $location.path('/');
                     return response;
                 });

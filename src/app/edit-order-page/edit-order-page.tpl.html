@@ -1,5 +1,5 @@
 <!-- Unregistered user view-->
-<div class="access-denied main-background" data-ng-if="currentUser === null">
+<div class="access-denied main-background" data-ng-if="currentUser() === null">
 <div class="panel panel-default">
   <div class="panel-heading"><h2>Недостатньо прав для перегляду</h2></div>
   <div class="panel-body">
@@ -9,7 +9,7 @@
 </div>
 </div>
 <!-- Admin view-->
-<main class="create-page" data-ng-if="currentUser !== null">
+<main class="create-page" data-ng-if="currentUser() !== null">
     <form name="editForm" role="form" data-ng-submit="editOrder(order)">
         <div class="jumbotron">
             <h2 class="text-center">Редагувати замовлення ID:{{order.id}}</h2>

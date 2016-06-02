@@ -4,25 +4,27 @@
     angular.module('messengers-app')
         .controller('LoginPageController', LoginPageController);
 
-    function LoginPageController($rootScope, $scope, $http, $location, $uibModal, Backand) {
+    function LoginPageController($scope, $http, $location, $uibModal, CommonService, Backand) {
 
+        //CommonService.getUser();
         //clear the current user logged in
-        //$rootScope.currentUser = null;
+        //CommonService.currentUser = null;
 
-        $scope.getUserDetails = function() {
+        /*$scope.getUserDetails = function() {
             var user = Backand.getUserDetails();
             if (user.$$state.value !== null) {
-                $rootScope.currentUser = user.$$state.value.username;
+                var currentUser = user.$$state.value.username;
+                CommonService.setUser(currentUser);
             } else {
-                $rootScope.currentUser = null;
+                CommonService.setUser(null);
             }
-        }
+        }*/
 
         //Sign in to Backand
         $scope.signin = function(form) {
             return Backand.signin(form.username, form.password)
                 .then(function(response) {
-                    $scope.getUserDetails();
+                    //CommonService.currentUser = CommonService.getUserDetails();
                     $location.path('/admin');
                     return response;
                 })

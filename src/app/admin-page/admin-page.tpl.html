@@ -1,6 +1,6 @@
 
 <!-- Unregistered user view-->
-<div class="access-denied main-background" data-ng-if="currentUser === null">
+<div class="access-denied main-background" data-ng-if="currentUser() === null">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h2>Недостатньо прав для перегляду<img src="images/privat_keys.png" width="60px"></h2></div>
@@ -11,7 +11,7 @@
     </div>
 </div>
 <!-- Admin view-->
-<main class="main-admin" data-ng-if="currentUser !== null">
+<main class="main-admin" data-ng-if="currentUser() !== null">
     <div class="panel panel-default">
         <!-- Default panel contents -->
         <div class="panel-heading">

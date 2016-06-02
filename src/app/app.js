@@ -19,7 +19,7 @@
             }
         });
         //clear the current user logged in
-        $rootScope.currentUser = null;
+        //$rootScope.currentUser = null;
 
     })
 })();
