@@ -1,3 +1,5 @@
+
+<msg-header></msg-header>
 <main class="create-page">
     <form name="createForm" role="form" ng-submit="addOrder(newOrder)">
         <h2>Форма замовлення</h2>
@@ -108,6 +110,9 @@
         <button type="submit" class="btn btn-primary btn-lg pull-right">Замовити</button>
     </form>
 </main>
+
+<msg-footer></msg-footer>
+
 <!-- Modal window: Order created - UI-bootstrap-->
 <script type="text/ng-template" id="orderCreatedModal.tpl.html">
     <div class="modal-header text-center">
@@ -120,4 +125,110 @@
     <div class="modal-footer">
         <button class="btn btn-primary" type="button" ng-click="ok()">Закрити</button>
     </div>
+</script>
+
+<!-- Header directive template-->
+<script type="text/ng-template" id="app/common/templates/msg-header.tpl.html">
+    <header data-ng-class="{hide: isHide('/login')}">
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#/">
+                        <img class="navbar-brand-logo" src="images/logos/messengers-logo_white.png" alt="Messengers delivery logo">
+                    </a>
+                    <a href="#/create">
+                        <button type="button" id="toggle-button" data-ng-class="[{ hide: isHide('/create')}, { hide: isHide('/admin')}]" class="navbar navbar-toggle collapsed btn btn-warning"><b>Замовити доставку</b></button>
+                    </a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#/">Bike messengers</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li data-ng-class="{ active: isActive('/')}"><a href="#/">Головна</span></a></li>
+                        <li data-ng-class="{ active: isActive('/conditions')}" class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Тарифи та умови <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/conditions">Карта доставки</a></li>
+                                <li><a href="#/conditions#prices">Тарифи</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#/conditions#add-prices">Додаткові тарифи</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#/conditions#payment">Способи оплати</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Контакти <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header">Телефони</li>
+                                <li><a href="tel:0978654321">+38 097 8654321</a></li>
+                                <li><a href="tel:0501234567">+38 050 1234567</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">E-mail</li>
+                                <li><a href="mailto:info@messengers.lviv.ua">info@messengers.lviv.ua</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Skype</li>
+                                <li><a href="skype:messengers.lviv?add">messengers.lviv</a></li>
+                            </ul>
+                        </li>
+                        <li data-ng-class="{ active: isActive('/admin')}"><a href="#/admin">Admin page</a></li>
+                        <li data-ng-if="currentUser() !== null"><a href=""><span class="glyphicon glyphicon-user"></span> {{currentUser()}}</a></li>
+                        <li data-ng-if="currentUser() !== null"><a href="" ng-click="signout()">Log out</a></li>
+                    </ul>
+                    <a href="#/create">
+                        <button type="button" data-ng-class="[{ hide: isHide('/create')}, { hide: isHide('/admin')}, { hide: isHide('/admin/id')}]" class="navbar navbar-right btn btn-warning"><b>Замовити доставку</b></button>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+</script>
+
+<!-- Footer directive template-->
+<script type="text/ng-template" id="app/common/templates/msg-footer.tpl.html">
+    <footer class="main-background">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <img class="footer-logo" src="images/logos/messengers-logo_black.png">
+                <div class="footer-icons">
+                    <a href="https://facebook.com/mesengers.lviv"><img class="footer-icons-icon" src="images/icons/facebook-round-icon.png"></a>
+                    <a href="https://instagram.com/mesengers.lviv"><img class="footer-icons-icon" src="images/icons/instagram-round-icon.png"></a>
+                    <a href="https://twitter.com/mesengers.lviv"><img class="footer-icons-icon" src="images/icons/twitter-round-icon.png"></a>
+                </div>
+            </div>
+            <div class="footer-titles col-xs-12 col-sm-4 col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item main-background"><a href="#/">Головна</a></li>
+                    <li class="list-group-item main-background"><a href="#/conditions">Послуги та ціни</a></li>
+                    <li class="list-group-item main-background"><a href="#/#partnership">Партнерство</a></li>
+                    <li class="list-group-item main-background"><a href="#/login">Admin Log in</a></li>
+                </ul>
+            </div>
+            <div class="footer-contacts col-xs-12 col-sm-4 col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item main-background">
+                        <img class="footer-icons-contact" src="images/icons/phone-icon.png">
+                        <a href="tel:0978654321">+38 097 8654321</a>
+                    </li>
+                    <li class="list-group-item main-background">
+                        <img class="footer-icons-contact" src="images/icons/phone-icon.png">
+                        <a href="tel:0501234567">+38 050 1234567</a>
+                    </li>
+                    <li class="list-group-item main-background">
+                        <img class="footer-icons-contact" src="images/icons/email-icon.png">
+                        <a href="mailto:info@messengers.lviv.ua">info@messengers.lviv.ua</a>
+                    </li>
+                    <li class="list-group-item main-background">
+                        <img class="footer-icons-contact" src="images/icons/skype-icon.png">
+                        <a href="skype:messengers.lviv?add">messengers.lviv</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </script>

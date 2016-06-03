@@ -20,7 +20,6 @@
         $scope.signout = function() {
             return Backand.signout()
                 .then(function(response) {
-                    //CommonService.currentUser = CommonService.getUserDetails();
                     $location.path('/');
                     return response;
                 });

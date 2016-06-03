@@ -6,20 +6,6 @@
 
     function LoginPageController($scope, $http, $location, $uibModal, CommonService, Backand) {
 
-        //CommonService.getUser();
-        //clear the current user logged in
-        //CommonService.currentUser = null;
-
-        /*$scope.getUserDetails = function() {
-            var user = Backand.getUserDetails();
-            if (user.$$state.value !== null) {
-                var currentUser = user.$$state.value.username;
-                CommonService.setUser(currentUser);
-            } else {
-                CommonService.setUser(null);
-            }
-        }*/
-
         //Sign in to Backand
         $scope.signin = function(form) {
             return Backand.signin(form.username, form.password)
