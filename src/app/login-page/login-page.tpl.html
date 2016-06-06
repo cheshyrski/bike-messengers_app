@@ -11,15 +11,14 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
     </form>
 </div>
-
 <!-- Modal window: Invalid pass or username - UI-bootstrap-->
-<script type="text/ng-template" id="invalidUserModal.tpl.html">
+<script type="text/ng-template" id="app/common/templates/msg-modal.tpl.html">
     <div class="modal-header text-center">
-        <h2 class="modal-title">Невірний логін або пароль</h2>
+        <h2 class="modal-title">{{modalWindow.header}}</h2>
     </div>
     <div class="modal-body text-center">
-        <img src="images/emoticons/monster_cry.png" width="100px">
-        <h4>Будьте уважні та спробуйте ввести значення ще раз</h4>
+        <img src="{{modalWindow.source}}" width="100px">
+        <h4>{{modalWindow.body}}</h4>
     </div>
     <div class="modal-footer">
         <button class="btn btn-primary" type="button" ng-click="ok()">Закрити</button>

@@ -18,8 +18,5 @@
                 $rootScope.title = current.$$route.title;
             }
         });
-        //clear the current user logged in
-        //$rootScope.currentUser = null;
-
     })
 })();

@@ -4,7 +4,9 @@
     angular.module('messengers-app')
         .controller('LoginPageController', LoginPageController);
 
-    function LoginPageController($scope, $http, $location, $uibModal, CommonService, Backand) {
+    function LoginPageController($scope, $http, $location, $uibModal, CommonService, ModalWindowsService, Backand) {
+
+        $scope.modalWindows = ModalWindowsService.modalWindows;
 
         //Sign in to Backand
         $scope.signin = function(form) {
@@ -17,8 +19,13 @@
                 .catch(function(reason) {
                     var modalInstance = $uibModal.open({
                         animation: true,
-                        templateUrl: 'invalidUserModal.tpl.html',
-                        controller: 'ModalEmptyMapController'
+                        templateUrl: 'app/common/templates/msg-modal.tpl.html',
+                        controller: 'ModalController',
+                        resolve: {
+                        modalWindow: function() {
+                            return $scope.modalWindows[4];
+                        }
+                    }
                     });
                     $scope.form.username = "";
                     $scope.form.password = "";

@@ -32,8 +32,7 @@
                 title: 'BM деталі замовлення'
             })
             .when('/not-found', {
-                templateUrl: 'not-found/not-found.tpl.html',
-                controller: 'NotFoundController',
+                templateUrl: 'app/not-found-page/not-found-page.tpl.html',
                 title: 'Bike messengers'
             })
             .when('/login', {
@@ -42,9 +41,7 @@
                 title: 'BM авторизація'
             })
             .otherwise({
-                templateUrl: 'not-found/not-found.tpl.html',
-                controller: 'NotFoundController',
-                title: 'Bike messengers'
+                redirectTo: '/not-found'
             });
     }
 })();

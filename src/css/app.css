@@ -177,6 +177,33 @@ footer {
       margin-bottom: 10px; }
 
 /*===== /LOGIN PAGE=====*/
+/*===== NOT-FOUND PAGE=====*/
+.main-not-found {
+  max-width: 500px;
+  padding: 30px 20px 50px;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  margin: 100px auto;
+  box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff; }
+  .main-not-found .main-not-found-container {
+    max-width: 380px;
+    _width: 380px;
+    margin: 0 auto; }
+    .main-not-found .main-not-found-container h1 {
+      margin: 0 10px;
+      font-size: 50px;
+      text-align: center; }
+      .main-not-found .main-not-found-container h1 span {
+        color: #bbb; }
+    .main-not-found .main-not-found-container h3 {
+      margin: 1.5em 0 0.5em; }
+    .main-not-found .main-not-found-container p {
+      margin: 1em 0; }
+    .main-not-found .main-not-found-container ul {
+      padding: 0 0 0 40px;
+      margin: 1em 0; }
+
+/*===== /NOT-FOUND PAGE=====*/
 @media (max-width: 767px) {
   .navbar-right,
   .features-image-box {
@@ -196,7 +223,12 @@ footer {
   .conditions-block-speed table, .conditions-block-weight table {
     width: 90%; }
   .conditions-block-surcharges img, .conditions-block-payment img {
-    display: none; } }
+    display: none; }
+
+  .access-denied {
+    padding: 150px 50px;
+    background-image: none;
+    height: 400px; } }
 @media (max-width: 992px) {
   .main-image-h3 {
     font-size: 30px !important; }

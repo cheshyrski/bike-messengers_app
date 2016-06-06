@@ -64,19 +64,6 @@
         <button class="btn btn-primary" type="button" ng-click="deleteOrder(order)">Не переконав</button>
     </div>
 </script>
-<!-- Modal window: Order deleted - UI-bootstrap-->
-<script type="text/ng-template" id="orderDeletedModal.tpl.html">
-    <div class="modal-header text-center">
-        <h2 class="modal-title">Замовлення видалене</h2>
-    </div>
-    <div class="modal-body text-center">
-        <img src="images/emoticons/monster_delete.png" width="100px">
-        <h4>Це був жахливий клієнт. Більше нічого не нагадуватиме про нього</h4>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="ok()">Закрити</button>
-    </div>
-</script>
 
 <!-- Header directive template-->
 <script type="text/ng-template" id="app/common/templates/msg-header.tpl.html">
@@ -144,7 +131,7 @@
 <script type="text/ng-template" id="app/common/templates/msg-footer.tpl.html">
     <footer class="main-background">
         <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4">
+            <div class="col-xs-6 col-sm-4 col-md-4">
                 <img class="footer-logo" src="images/logos/messengers-logo_black.png">
                 <div class="footer-icons">
                     <a href="https://facebook.com/mesengers.lviv"><img class="footer-icons-icon" src="images/icons/facebook-round-icon.png"></a>
@@ -152,7 +139,7 @@
                     <a href="https://twitter.com/mesengers.lviv"><img class="footer-icons-icon" src="images/icons/twitter-round-icon.png"></a>
                 </div>
             </div>
-            <div class="footer-titles col-xs-12 col-sm-4 col-md-4">
+            <div class="footer-titles hidden-xs col-sm-4 col-md-4">
                 <ul class="list-group">
                     <li class="list-group-item main-background"><a href="#/">Головна</a></li>
                     <li class="list-group-item main-background"><a href="#/conditions">Послуги та ціни</a></li>
@@ -160,7 +147,7 @@
                     <li class="list-group-item main-background"><a href="#/login">Admin Log in</a></li>
                 </ul>
             </div>
-            <div class="footer-contacts col-xs-12 col-sm-4 col-md-4">
+            <div class="footer-contacts col-xs-6 col-sm-4 col-md-4">
                 <ul class="list-group">
                     <li class="list-group-item main-background">
                         <img class="footer-icons-contact" src="images/icons/phone-icon.png">

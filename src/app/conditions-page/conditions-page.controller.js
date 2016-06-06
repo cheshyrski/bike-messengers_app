@@ -4,12 +4,13 @@
     angular.module('messengers-app')
         .controller('ConditionsPageController', ConditionsPageController);
 
-    function ConditionsPageController($scope, $timeout, $uibModal) {
+    function ConditionsPageController($scope, $timeout, $uibModal, ModalWindowsService) {
         $scope.map;
         $scope.markers = [];
         $scope.markerId = 1;
+        $scope.modalWindows = ModalWindowsService.modalWindows;
 
-        //Map initialization  
+        //Map initialization
         $timeout(function() {
 
             var latlng = new google.maps.LatLng(49.841835389, 24.03132611);
@@ -40,14 +41,19 @@
             if ($scope.markers.length == 0) {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: 'absentMarkersModal.tpl.html',
-                    controller: 'ModalEmptyMapController'
+                    templateUrl: 'app/common/templates/msg-modal.tpl.html',
+                    controller: 'ModalController',
+                    resolve: {
+                        modalWindow: function() {
+                            return $scope.modalWindows[0];
+                        }
+                    }
                 });
                 return;
             }
 
             for (var i = 0; i < $scope.markers.length; i++) {
-                
+
                 //Remove the Marker from the Map                  
                 $scope.markers[i].setMap(null);
             }
@@ -84,8 +90,13 @@
             if ($scope.markers.length < 2) {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: 'absentDistanceModal.tpl.html',
-                    controller: 'ModalEmptyMapController'
+                    templateUrl: 'app/common/templates/msg-modal.tpl.html',
+                    controller: 'ModalController',
+                    resolve: {
+                        modalWindow: function() {
+                            return $scope.modalWindows[1];
+                        }
+                    }
                 });
             } else {
                 var totalDistance = 0;

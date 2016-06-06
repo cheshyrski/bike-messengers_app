@@ -4,7 +4,9 @@
     angular.module('messengers-app')
         .controller('CreatePageController', CreatePageController);
 
-    function CreatePageController($scope, $http, $location, $uibModal, Backand, OrdersService) {
+    function CreatePageController($scope, $http, $location, $uibModal, Backand, OrdersService, ModalWindowsService) {
+
+        $scope.modalWindows = ModalWindowsService.modalWindows;
 
         //========================
         //calendar functions block
@@ -80,8 +82,13 @@
                 .then(function(res) {
                     var modalInstance = $uibModal.open({
                         animation: true,
-                        templateUrl: 'orderCreatedModal.tpl.html',
-                        controller: 'ModalEmptyMapController'
+                        templateUrl: 'app/common/templates/msg-modal.tpl.html',
+                        controller: 'ModalController',
+                        resolve: {
+                        modalWindow: function() {
+                            return $scope.modalWindows[2];
+                        }
+                    }
                     });
                     $location.path('/');
                 })
