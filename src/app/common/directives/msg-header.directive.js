@@ -7,7 +7,7 @@
     function msgHeader() {
         return {
             restrict: 'E',
-            templateUrl: 'app/common/templates/msg-header.tpl.html',
+            templateUrl: 'common/templates/msg-header.tpl.html',
             controller: 'HeaderController'
         };
     }

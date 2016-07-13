@@ -2,11 +2,15 @@
 @import 'components/components';
 @font-face {
     font-family: "Glyphicons Halflings";
-    src: url("../bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf");
+    src: url("../fonts/glyphicons-halflings-regular.ttf");
+}
+@font-face {
     font-family: 'Philosopher';
     src: url("../fonts/philosopher/Philosopher-Regular.ttf");
-    font-family: 'Roboto', sans-serif;
-    src: urlurl("../fonts/roboto/Roboto-Regular.ttf");
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/roboto/Roboto-Regular.ttf");
 }
 
 body {
@@ -87,11 +91,13 @@ footer {
     padding: 40px;
     .footer-logo {
         width: 120px;
+        margin-left: 10px;
     }
     .footer-icons {
         margin-top: 15px;
         &-icon {
             width: 40px;
+            margin: 3px;
         }
     }
     .footer-titles {
@@ -107,6 +113,7 @@ footer {
                 border: none;
                 .footer-icons-contact {
                     width: 1em;
+                    margin-right: 8px;
                 }
             }
         }
@@ -213,6 +220,9 @@ footer {
     height: 600px;
     .panel {
         width: 600px;
+        &-body b {
+            line-height: 45px;
+        }
     }
 }
 

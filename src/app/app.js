@@ -1,7 +1,7 @@
 (function() {
     "use strict";
 
-    angular.module('messengers-app', ['ngRoute', 'ui.bootstrap', 'backand', 'ngMaterial'])
+    angular.module('messengers-app', ['ngRoute', 'ui.bootstrap', 'backand', 'ngMaterial', 'messengers-app.templates'])
 
     .config(function(BackandProvider) {
         BackandProvider.setAppName('messengers');

@@ -7,7 +7,7 @@
     function msgFooter() {
         return {
             restrict: 'E',
-            templateUrl: 'app/common/templates/msg-footer.tpl.html'
+            templateUrl: 'common/templates/msg-footer.tpl.html'
         };
     }
 }());

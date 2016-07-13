@@ -4,7 +4,7 @@
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#/">
-                        <img class="navbar-brand-logo" src="app/main-page/images/messengers-logo_white.png" alt="Messengers delivery logo">
+                        <img class="navbar-brand-logo" src="../../images/logos/messengers-logo_white.png" alt="Messengers delivery logo">
                     </a>
                     <a href="#/create">
                         <button type="button" id="toggle-button" data-ng-class="[{ hide: isHide('/create')}, { hide: isHide('/admin')}]" class="navbar navbar-toggle collapsed btn btn-warning"><b>Замовити доставку</b></button>
@@ -46,8 +46,8 @@
                             </ul>
                         </li>
                         <li data-ng-class="{ active: isActive('/admin')}"><a href="#/admin">Admin page</a></li>
-                        <li data-ng-if="currentUser !== null"><a href=""><span class="glyphicon glyphicon-user"></span> {{currentUser}}</a></li>
-                        <li data-ng-if="currentUser !== null"><a href="" ng-click="signout()">Log out</a></li>
+                        <li data-ng-if="currentUser() !== null"><a href=""><span class="glyphicon glyphicon-user"></span> &nbsp {{currentUser()}}</a></li>
+                        <li data-ng-if="currentUser() !== null"><a href="" data-ng-click="signout()">Log out</a></li>
                     </ul>
                     <a href="#/create">
                         <button type="button" data-ng-class="[{ hide: isHide('/create')}, { hide: isHide('/admin')}, { hide: isHide('/admin/id')}]" class="navbar navbar-right btn btn-warning"><b>Замовити доставку</b></button>
